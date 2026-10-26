@@ -3,6 +3,22 @@ import os, io, json, time, asyncio, logging
 from datetime import datetime, date, timezone
 from functools import wraps
 import asyncpg
+"""Private Telegram Video Vault. Requires BOT_TOKEN and DATABASE_URL."""
+import os, io, json, time, asyncio, logging
+from datetime import datetime, date, timezone
+from functools import wraps
+import asyncpg
+import functools
+import logging
+import os
+import random
+import sqlite3
+import time
+from dotenv import load_dotenv  # 1. Import it first
+
+# 2. Now call it to load the .env file
+load_dotenv()
+
 from telegram import Update, InlineKeyboardButton as Btn, InlineKeyboardMarkup as Markup, InputMediaVideo, BotCommand
 from telegram.error import TelegramError, RetryAfter, TimedOut, NetworkError
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, ContextTypes, filters
